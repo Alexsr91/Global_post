@@ -3,9 +3,60 @@ const router  = express.Router();
 const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
 
+// SIGN UP
 
 router.get('/signup', (req, res, next) => {
   res.render('user/signup');
 });
+
+router.post('/signup', (req, res, next) => {
+  // creates salt
+  // 10 stands for the number of salt rounds
+  const salt = bcrypt.genSaltSync(10);
+  // bcrypt.hashSync() method receives two different parameters: the password we are going to encrypt and the value of previously generated salt
+  const pwHash = bcrypt.hashSync(req.body.password, salt);
+  // creates an object in the database
+  User.create({ username: req.body.username, passwordHash: pwHash }).then(() => {
+      res.redirect('/')
+  });
+});
+
+// LOGIN
+
+router.get('/login', (req, res) => {
+  res.render('user/login')
+})
+
+router.post('/login', (req, res) => {
+  console.log('SESSION =====> ', req.session); // req.session === {}
+
+  // find the user by their username
+  User.findOne({ username: req.body.username }).then((user) => {
+
+    if (!user) {
+      // this user does not exist
+      res.render('/user/login', { errorMessage: 'username does not exist' })
+    } else {
+
+      // check if the password is correct
+      if (bcrypt.compareSync(req.body.password, user.passwordHash)) {
+        req.session.user = user
+        res.send('password correct - logged in')
+      } else {
+        res.render('/user/login', { errorMessage: 'password wrong' })
+      }
+
+    }
+
+  })
+
+})
+
+// LOGOUT
+router.post('/logout', (req, res) => {
+  req.session.destroy();
+  res.send('logged out')
+});
+
 
 module.exports = router;
