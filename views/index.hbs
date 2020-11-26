@@ -1,8 +1,81 @@
-
 <h1>Welcome to GLOBAL POST</h1s>
 
-<form action="/logout" method="post">
+  <form action="/logout" method="post">
 
-  <button class="save-button" type="submit">Logout</button>
-  
-</form>
+    <button class="save-button" type="submit">Logout</button>
+
+  </form>
+
+  <Section class="explore_categories">
+
+    <h3>Explore in GLOBALPOST</h3>
+
+    <div class="block_categories">
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+
+      <div class="category_card">
+        <h5>Categoty</h5>
+        <p>lorem ipsum dolre eas</p>
+      </div>
+    </div>
+
+  </Section>
+
+  <Section class="explore_products">
+
+    <h3>Explore Products</h3>
+
+    <div class="block_products">
+
+      <div class="product_card">
+        {{#each allProducts}}
+        <h5>{{this.title}}</h5>
+        <p>{{this.smallDescription}}</p>
+        <p>Posted by:{{this.user.username}}</p>
+        {{/each}}
+      </div>
+
+    </div>
+    
+  </Section>
+
+
+  <br>

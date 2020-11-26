@@ -76,8 +76,8 @@ app.use('/', index);
 const user = require('./routes/user');
 app.use('/', user);
 
-// const product = require('./routes/product');
-// app.use('/', product);
+const product = require('./routes/product');
+app.use('/', product);
 
 
 

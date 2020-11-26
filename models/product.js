@@ -4,9 +4,11 @@ const { Schema, model } = mongoose;
 const product = new Schema(
   {
     title: String,
-    second_title: String,
+    smallDescription: String,
     description: String,
-    price: String,
+    price: Number,
+    category: String,
+    location: String,
     user: { type: Schema.Types.ObjectId, ref: 'User' },
 
   },
