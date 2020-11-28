@@ -1,12 +1,12 @@
 <h3>Add a new product</h3>
 
-<form action="/new/product" method="POST">
+<form action="/new/product" method="POST" enctype="multipart/form-data">
 
 Title: <input type="text" name="title"> <br>
 Small Description: <input type="text" name="smallDescription"> <br>
 description: <input type="text" name="description"> <br>
 Price: <input type="text" name="price"> <br>
- category: <select id="category" name="category">
+category: <select id="category" name="category">
 
             <option value="category">Old stuff</option>
             <option value="category">New stuff</option>
@@ -19,6 +19,7 @@ Price: <input type="text" name="price"> <br>
           
         </select>
 location: <input type="text" name="location"> <br>
+Image: <input type="file" name="image" id="" /> <br>
 
 <button type="submit">NEW ADD</button>
 

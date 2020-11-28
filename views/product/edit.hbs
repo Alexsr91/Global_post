@@ -1,0 +1,26 @@
+<h3>Edit My Product</h3>
+
+<form action="/{{myProduct.id}}/update" method="POST">
+
+Title: <input type="text" name="title" value="{{myProduct.title}}"> <br>
+Small Description: <input type="text" name="smallDescription" value="{{myProduct.smallDescription}}" > <br>
+description: <input type="text" name="description" value="{{myProduct.description}}"> <br>
+Price: <input type="text" name="price" value="{{myProduct.price}}"> <br>
+ category: <select id="category" name="category">
+
+            <option value="category">Old stuff</option>
+            <option value="category">New stuff</option>
+            <option value="category">Electonics</option>
+            <option value="category">Clothes</option>
+            <option value="category">Toys</option>
+            <option value="category">Art</option>
+            <option value="category">Hause</option>
+            <option value="category">Veicles</option>
+          
+        </select>
+location: <input type="text" name="location" value="{{myProduct.location}}"> <br>
+
+<button type="submit">EDIT ITEM</button>
+
+
+</form>

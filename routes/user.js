@@ -58,5 +58,30 @@ router.post('/logout', (req, res) => {
   res.send('logged out')
 });
 
+//Edit Profile
+
+router.get('/:id/edit-profile', (req, res, next) => {
+  console.log("user id",req.params.id);
+  User.findById(req.params.id).then( user => {
+    console.log("my user profile", user)
+    res.render('user/edituser', { myUserDestails: user })
+  })
+});
+
+router.post('/:id/update', (req, res) => {
+  console.log("my data", req.body)
+  User.findByIdAndUpdate(req.params.id, { 
+    Name: req.body.Name,
+    SecondName: req.body.SecondName,
+    Address: req.body.Address,
+    bio: req.body.bio,
+    }).then(() => {
+    res.redirect('/userpage')
+  })
+})
+
+
+
+
 
 module.exports = router;

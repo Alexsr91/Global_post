@@ -1,3 +1,30 @@
-<h1>User profile page</h1>
+<h1>{{user.username}} profile page</h1>
+<p>{{user.Name}}</p>
+<p>{{user.SecondName}}</p>
+<p>{{user.bio}}</p>
+<form action="/{{user.id}}/edit-profile" method="get">
+  <button>EDIT PROFILE</button>
+</form>
+<button><a href="/new/product">New product</a></button>
+<h3>Your products</h3>
 
-<h3></h3>
+<div class="block_products">
+
+  <div class="product_card">
+    {{#each myProducts}}
+    <h3>{{this.title}}</h3>
+    <p>{{this.smallDescription}}</p>
+    <p>{{this.description}}</p>
+    <p>{{this.price}}</p>
+    <form action="/{{this._id}}/delete" method="post">
+      <button>DELETE</button>
+    </form>
+    <form action="/{{this._id}}/edit" method="get">
+      <button>EDIT</button>
+    </form>
+    {{/each}}
+
+
+  </div>
+
+</div>

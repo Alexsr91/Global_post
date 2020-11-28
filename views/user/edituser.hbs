@@ -1,0 +1,14 @@
+<h3>Edit My Profile</h3>
+
+<form action="/{{myUserDestails.id}}/update" method="POST">
+
+Name: <input type="text" name="Name" value="{{myUserDestails.Name}}"> <br>
+Second Name: <input type="text" name="SecondName" value="{{myUserDestails.SecondName}}" > <br>
+Address: <input type="text" name="Address" value="{{myUserDestails.Address}}"> <br>
+Bio: <input type="text" name="bio" value="{{myUserDestails.bio}}"> <br>
+
+
+<button type="submit">Update profile</button>
+
+
+</form>

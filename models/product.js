@@ -9,6 +9,7 @@ const product = new Schema(
     price: Number,
     category: String,
     location: String,
+    imageUrl: String,
     user: { type: Schema.Types.ObjectId, ref: 'User' },
 
   },

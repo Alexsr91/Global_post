@@ -67,9 +67,11 @@
 
       <div class="product_card">
         {{#each allProducts}}
-        <h5>{{this.title}}</h5>
+        <img src="{{this.imageUrl}}" alt="Image">
+        <h3>{{this.title}}</h3>
         <p>{{this.smallDescription}}</p>
-        <p>Posted by:{{this.user.username}}</p>
+        <p>{{this.price}}€</p>
+        <p>Posted by:<a href="/userpage">{{this.user.username}}</a></p>
         {{/each}}
       </div>
 
