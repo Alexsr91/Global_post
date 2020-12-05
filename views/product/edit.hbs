@@ -1,7 +1,9 @@
-<h3>Edit My Product</h3>
+<section class="form-container">
+
+<img src="/images/new_product.jpg" alt="">
 
 <form action="/{{myProduct.id}}/update" method="POST">
-
+<h3>Edit My Product</h3>
 Title: <input type="text" name="title" value="{{myProduct.title}}"> <br>
 Small Description: <input type="text" name="smallDescription" value="{{myProduct.smallDescription}}" > <br>
 description: <input type="text" name="description" value="{{myProduct.description}}"> <br>
@@ -24,3 +26,4 @@ location: <input type="text" name="location" value="{{myProduct.location}}"> <br
 
 
 </form>
+</section>

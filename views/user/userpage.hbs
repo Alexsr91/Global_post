@@ -1,30 +1,44 @@
-<h1>{{user.username}} profile page</h1>
-<p>{{user.Name}}</p>
-<p>{{user.SecondName}}</p>
-<p>{{user.bio}}</p>
-<form action="/{{user.id}}/edit-profile" method="get">
-  <button>EDIT PROFILE</button>
-</form>
-<button><a href="/new/product">New product</a></button>
-<h3>Your products</h3>
+<header class="header-user">
+  <h1>Welcome {{user.username}}!</h1>
+</header>
 
-<div class="block_products">
+<section class="User_card">
+  <p>Name: {{user.Name}} {{user.SecondName}}</p><br>
+  <p>About:{{user.bio}}</p><br>
+  <p>Email:{{user.Email}}</p>
+  <p>Phone Number:{{user.Phone}}</p><br>
 
-  <div class="product_card">
+  <form action="/{{user.id}}/edit-profile" method="get">
+    <button>EDIT PROFILE</button>
+  </form>
+  <button><a href="/new/product">New product</a></button>
+</section>
+
+<Section class="explore_products">
+  <h3>Your products</h3>
+
+  <div class="block_products">
     {{#each myProducts}}
-    <h3>{{this.title}}</h3>
-    <p>{{this.smallDescription}}</p>
-    <p>{{this.description}}</p>
-    <p>{{this.price}}</p>
-    <form action="/{{this._id}}/delete" method="post">
-      <button>DELETE</button>
-    </form>
-    <form action="/{{this._id}}/edit" method="get">
-      <button>EDIT</button>
-    </form>
+    <div class="product_card">
+      <div class="img-box">
+        <img src="{{this.imageUrl}}" alt="Image">
+      </div>
+      <div class="text">
+        <h4>{{this.title}}</h4>
+        <p>Price: {{this.price}}</p>
+        <p>{{this.smallDescription}}</p>
+        <p>{{this.description}}</p>
+      </div>
+      <div class="btn_card">
+        <form action="/{{this._id}}/delete" method="post">
+          <button>DELETE</button>
+        </form>
+        <form action="/{{this._id}}/edit" method="get">
+          <button>EDIT</button>
+        </form>
+      </div>
+    </div>
     {{/each}}
 
-
   </div>
-
-</div>
+</Section>

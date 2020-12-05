@@ -1,0 +1,39 @@
+<section class="form-container">
+
+ <div class="img-box">
+        <img src="{{product.imageUrl}}" alt="Image">
+     
+      <div class="text">
+        <h4>{{product.title}}</h4>
+        <p>Price: {{product.price}}</p>
+        <p>{{product.smallDescription}}</p>
+        <p>{{product.description}}</p>
+      </div>
+ </div>
+
+
+<a href="/">Go back to the list</a>
+
+<input type="hidden" id="myLatitude" type="number" value="{{product.location.coordinates.[1]}}">
+<input type="hidden" id="myLongitude" type="number" value="{{product.location.coordinates.[0]}}">
+
+<div id="map"></div>
+</section>
+
+{{!-- <script>
+  const centerLoc = {
+    lat: Number(document.getElementById('myLatitude').value),
+    lng: Number(document.getElementById('myLongitude').value)
+  };
+
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: centerLoc
+  });
+
+  const pin = new google.maps.Marker({
+    position: centerLoc,
+    map: map,
+    title: "Some name here in the future"
+  });
+</script> --}}

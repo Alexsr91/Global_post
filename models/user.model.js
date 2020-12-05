@@ -15,6 +15,8 @@ const userSchema = new Schema(
     SecondName: String,
     Address: String,
     bio: String,
+    Email: String,
+    Phone: String,
   },
   {
     timestamps: true

@@ -1,0 +1,45 @@
+<header class="header-user">
+  <h1>This is {{theseller.username}}!</h1>
+</header>
+
+<section class="User_card">
+  <p>Name: {{theseller.Name}} {{theseller.SecondName}}</p><br>
+  <p>About:{{theseller.bio}}</p><br>
+  <p>Email:{{theseller.Email}}</p>
+  <p>Phone Number:{{theseller.Phone}}</p><br>
+
+  </form>
+
+  <form action="/send-email" method="post">
+    
+    
+    <input type="hidden" name="email" id="" value="{{theseller.Email}}" >
+    <label for="">Subject</label>
+    <input type="text" name="subject" id="">
+    <label for="">Message</label>
+    <textarea type="text" name="message" id=""></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+</section>
+
+<Section class="explore_products">
+  <h3>Your products</h3>
+
+  <div class="block_products">
+    {{#each sellerProduct}}
+    <div class="product_card">
+      <div class="img-box">
+        <img src="{{this.imageUrl}}" alt="Image">
+      </div>
+      <div class="text">
+        <h4>{{this.title}}</h4>
+        <p>Price: {{this.price}}</p>
+        <p>{{this.smallDescription}}</p>
+        <p>{{this.description}}</p>
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+</Section>

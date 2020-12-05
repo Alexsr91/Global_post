@@ -1,8 +1,385 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-a {
-  color: #00B7FF; }
 
-/*# sourceMappingURL=style.css.map */
+*{
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 700;
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 600;
+  src: url("../fonts/Gilroy-Heavy.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 500;
+  src: url("../fonts/Gilroy-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 400;
+  src: url("../fonts/Gilroy-Medium.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 300;
+  src: url("../fonts/Gilroy-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 200;
+  src: url("../fonts/Gilroy-Light.otf") format("opentype");
+}
+/* HOME PAGE */
+h1{
+  font-family: Gilroy;
+  font-weight: 700;
+  font-size: 60px;
+  color: #0E113C;
+}
+
+em{
+  color: #706EFF;
+  font-style: normal;
+}
+
+.nav-bar{
+padding: 12px 0 12px 0;
+background-color: white;
+overflow: hidden;
+position: fixed;
+top: 0;
+width: 100%;
+}
+
+.nav-content{
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 16px;
+  color: #0E113C;
+}
+
+.logo{
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.Button-small{
+  background-color: #706EFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 150px;
+  border-radius: 4px;
+}
+
+.Button-small a{
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 16px;
+  border: 4;
+  color: white;
+  text-decoration: none;
+  margin-top: 3px;
+}
+
+.Button-small:hover{
+  background-color: #8e8dfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 150px;
+  border-radius: 4px;
+}
+
+.nav_content{
+  margin-right: 32px;
+  text-decoration: none;
+  color: #0E113C;
+
+}
+
+.nav_content:hover{
+  margin-right: 32px;
+  color: #35397c; 
+  text-decoration: none;
+  cursor:pointer; 
+
+}
+
+.header-home{
+  margin-top: 200px;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+
+}
+
+.filter-box{
+  padding: 8px 8px 8px 26px;
+  border: 1px solid #706EFF;
+  border-radius: 100px;
+  box-shadow: inset 0px 0px 6px #706EFF, 0px 0px 6px #706EFF;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.vl {
+  border-left: 1px solid #706EFF;
+  height: 36px;
+}
+
+.filter{
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  margin-right: 40px;
+}
+
+.filter p{
+  margin-right: auto;
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 14px;
+  color: #7578B5;
+  margin-bottom: 4px;
+}
+
+.filter input{
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 16px;
+  color: #7578B5;
+  padding: 0px;
+  width: 140px;
+  box-sizing: border-box;
+  border: none;
+  cursor:pointer; 
+}
+
+.filter input:focus{
+  border: none;
+  
+}
+
+.filter select{
+  border: none;
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 16px;
+  color: gray;
+  box-sizing: border-box;
+  border: none;
+  
+}
+
+.search-buttom{
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  background-color: #706EFF;
+  border-radius: 100%;
+  border: none;
+}
+
+.search-buttom:hover{
+  background-color: #8e8dfd;
+  cursor:pointer; 
+}
+
+.explore_categories{
+  margin-top: 180px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.explore_categories h3{
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 26px;
+  color: #0E113C;
+}
+
+.block_categories{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 28px;
+  align-content:space-between;
+  
+}
+
+.category_card{
+  width: 252px;
+  height: 280px;
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 26px;
+  color: white;
+  border-radius: 4px;
+}
+
+.category_card:hover{
+  margin-top: -10px;
+  cursor: pointer;
+}
+
+.category_card h5{
+  margin: 24px 0 0 24px;
+}
+
+.category_card:nth-child(1){
+  background-color: #FCACAB;
+  margin-right: 24px;
+}
+.category_card:nth-child(2){
+  background-color: #9881EE;
+  margin-right: 24px;
+
+}
+.category_card:nth-child(3){
+  background-color: #58D893;
+  margin-right: 24px;
+
+}
+.category_card:nth-child(4){
+  background-color: #FFEEB0;
+  color: #0E113C;
+}
+
+.explore_products{
+  margin-top: 100px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 300px;
+}
+.explore_products h3{
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 26px;
+  color: #0E113C;
+}
+
+.block_products{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.product_card{
+  width: 252px;
+  height: 280px;
+  flex: 0 0 200px;
+  margin-right: 24px;
+  box-shadow: 2px 2px 6px 0px  rgba(117,120,181,0.38);
+  border-radius: 4px;
+}
+.product_card:hover{
+margin-top: -10px;
+cursor: pointer;
+}
+
+.product_card img{
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+
+.product_card h4{
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 20px;
+  color: #0E113C;
+}
+.text p:nth-child(2){
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 16px;
+  color: #7578B5;
+}
+.text p:nth-child(3){
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 16px;
+  color: #7578B5;
+}
+.text p:nth-child(4){
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 12px;
+  color:  rgba(117,120,181,0.38);
+}
+
+/* LOGIN - SING UP */
+
+.form-container{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 20px;
+  color: #0E113C;
+}
+.form-container img{
+  width: 50%;
+}
+
+/* USER PROFILE */
+.header-user{
+  margin-top: 100px;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-bottom: 40px;
+}
+.header-user h1{  
+  width: auto;
+}
+
+.User_card{
+  margin-right: 20%;
+  margin-left: 20%;
+  width: auto;
+  height: 220px;
+  flex: 0 0 200px;
+  padding: 24px;
+  box-shadow: 2px 2px 6px 0px  rgba(117,120,181,0.38);
+  border-radius: 4px;
+}
+
+.btn_card{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}

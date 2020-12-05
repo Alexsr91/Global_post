@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
 
 // SIGN UP
 
@@ -41,7 +42,7 @@ router.post('/login', (req, res) => {
       // check if the password is correct
       if (bcrypt.compareSync(req.body.password, user.passwordHash)) {
         req.session.user = user
-        res.send('password correct - logged in')
+        res.redirect('/userpage')
       } else {
         res.render('/user/login', { errorMessage: 'password wrong' })
       }
@@ -55,7 +56,7 @@ router.post('/login', (req, res) => {
 // LOGOUT
 router.post('/logout', (req, res) => {
   req.session.destroy();
-  res.send('logged out')
+  res.redirect('/')
 });
 
 //Edit Profile
@@ -64,7 +65,7 @@ router.get('/:id/edit-profile', (req, res, next) => {
   console.log("user id",req.params.id);
   User.findById(req.params.id).then( user => {
     console.log("my user profile", user)
-    res.render('user/edituser', { myUserDestails: user })
+    res.render('user/edituser', { myUserDestails: user, user: user })
   })
 });
 
@@ -75,13 +76,11 @@ router.post('/:id/update', (req, res) => {
     SecondName: req.body.SecondName,
     Address: req.body.Address,
     bio: req.body.bio,
+    Email: req.body.Email,
+    Phone: req.body.Phone,
     }).then(() => {
     res.redirect('/userpage')
   })
 })
-
-
-
-
 
 module.exports = router;

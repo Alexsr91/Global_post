@@ -1,6 +1,4 @@
-<header class="header-home">
-  <h1>Find the <em> best stuff </em><br>Buy other people things</h1>
-
+<Section class="explore_products">
   <form action="/filter" method="get" class="filter-box">
     <div class="filter">
       <p>Product</p>
@@ -11,12 +9,12 @@
       <p>Price</p>
       <select id="pricing" name="price" placeholder="Choose a category">
 
-         <option value="0">More than 0€</option>
-            <option value="50">More than 50€</option>
-            <option value="100">More than 100€</option>
-            <option value="200">More than 200€</option>
-            <option value="500">More than 500€</option>
-            <option value="1000">More than 1000€</option>
+        <option value="0">More than 0€</option>
+        <option value="50">More than 50€</option>
+        <option value="100">More than 100€</option>
+        <option value="200">More than 200€</option>
+        <option value="500">More than 500€</option>
+        <option value="1000">More than 1000€</option>
 
       </select>
     </div>
@@ -43,46 +41,13 @@
     </div>
     <button type="submit" class="search-buttom"><img src="images/search.svg" alt=""></i></button>
   </form>
-</header>
-
-
-<Section class="explore_categories">
-
-  <h3>Explore in GlobalPost</h3>
-
-  <div class="block_categories">
-    <div class="category_card">
-      <h5>Old stuff</h5>
-
-    </div>
-
-    <div class="category_card">
-      <h5>New stuff</h5>
-
-    </div>
-
-    <div class="category_card">
-      <h5>Electonics</h5>
-
-    </div>
-
-    <div class="category_card">
-      <h5>Create <br> new add</h5>
-
-    </div>
 
 
 
-  </div>
-
-</Section>
-
-<Section class="explore_products">
-
-  <h3>Explore Products</h3>
+  <h3>Your results</h3>
 
   <div class="block_products">
-    {{#each allProducts}}
+    {{#each filterresult}}
     <div class="product_card">
       <div class="img-box">
         <img src="{{this.imageUrl}}" alt="Image">
@@ -91,15 +56,10 @@
         <h4>{{this.title}}</h4>
         <p>{{this.smallDescription}}</p>
         <p>{{this.price}}€</p>
-
         <p>Posted by:<a href="/sellerpage/{{this.user.id}}">{{this.user.username}}</a></p>
       </div>
-      <p><a href="{{this._id}}/seemore">see more</a></p>
     </div>
     {{/each}}
   </div>
 
 </Section>
-
-
-<br>

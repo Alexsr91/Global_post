@@ -1,14 +1,19 @@
-<h3>Edit My Profile</h3>
+
+<section class="form-container">
+  
+  <img src="/images/4957136.jpg" alt="">
 
 <form action="/{{myUserDestails.id}}/update" method="POST">
 
+<h3>Edit My Profile</h3>
 Name: <input type="text" name="Name" value="{{myUserDestails.Name}}"> <br>
 Second Name: <input type="text" name="SecondName" value="{{myUserDestails.SecondName}}" > <br>
 Address: <input type="text" name="Address" value="{{myUserDestails.Address}}"> <br>
 Bio: <input type="text" name="bio" value="{{myUserDestails.bio}}"> <br>
-
+Email: <input type="text" name="Email" value="{{myUserDestails.Email}}"> <br>
+Phone Numer: <input type="text" name="Phone" value="{{myUserDestails.Phone}}"> <br>
 
 <button type="submit">Update profile</button>
-
-
 </form>
+
+</section>

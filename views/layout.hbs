@@ -6,11 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
+
+<nav class="nav-bar">
+  
+    <div class="nav-content">
+   
+      <a href="/" class="logo"><img src="/images/Logo.png" alt="GlobalPost"></a>
+      
+      {{#if user}}
+        <form action="/logout" method="post">
+        <button class="save-button" type="submit">Logout</button>
+        </form>
+      <div><a href="/userpage">{{user.Name}}</a></div>
+      {{else}}
+      <a href="/login" class="nav_content">Login</a>
+      <div class="Button-small"><a href="/signup">Get started</a></div>
+      {{/if}}
+    </div>
+  
+</nav>
 
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
 </body>
 </html>
+
