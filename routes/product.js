@@ -141,7 +141,7 @@ router.get('/:id/seemore', (req, res, next) => {
   console.log(req.params.id)
   Product.findById(req.params.id).then((producFromDB) => {
     console.log(producFromDB)
-    res.render('seemore', { product: producFromDB })
+    res.render('product/seemore', { product: producFromDB })
 
 
   })
