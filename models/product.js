@@ -8,10 +8,10 @@ const product = new Schema(
     description: String,
     price: Number,
     category: String,
-    location: String,
+    city: String,
     imageUrl: String,
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-
+    location: { type: { type: String }, coordinates: [Number] }
   },
   {
     timestamps: true

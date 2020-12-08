@@ -399,3 +399,7 @@ width: 100%;
   color: white;
 text-decoration: none;
 }
+
+#map {
+  height: 400px
+}

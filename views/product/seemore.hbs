@@ -8,31 +8,53 @@
         <p>Price: {{product.price}}</p>
         <p>{{product.smallDescription}}</p>
         <p>{{product.description}}</p>
+
+ <input type="hidden" id="myLatitude" type="number" value="{{product.location.coordinates.[1]}}">
+<input type="hidden" id="myLongitude" type="number" value="{{product.location.coordinates.[0]}}">
+<div id="map"></div>
       </div>
  </div>
-<h1>{{theseller.name}}</h1>
-<a href="/">Go back to the list</a>
 
-<input type="hidden" id="myLatitude" type="number" value="{{product.location.coordinates.[1]}}">
-<input type="hidden" id="myLongitude" type="number" value="{{product.location.coordinates.[0]}}">
 
-<div id="map"></div>
+<section class="User_card">
+  <p>Name: {{product.user.Name}} {{product.user.SecondName}}</p><br>
+  <p>About:{{product.user.bio}}</p><br>
+  <p>Email:{{product.user.Email}}</p>
+  <p>Phone Number:{{product.user.Phone}}</p><br>
+
+  </form>
+
+  <form action="/send-email" method="post">
+    
+    
+    <input type="hidden" name="email" id="" value="{{product.user.Email}}" >
+    <label for="">Subject</label>
+    <input type="text" name="subject" id="">
+    <label for="">Message</label>
+    <textarea type="text" name="message" id=""></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
 </section>
 
-{{!-- <script>
+
+<a href="/">Go back to the list</a>
+
+</section>
+
+<script>
   const centerLoc = {
     lat: Number(document.getElementById('myLatitude').value),
     lng: Number(document.getElementById('myLongitude').value)
   };
-
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
     center: centerLoc
   });
-
   const pin = new google.maps.Marker({
     position: centerLoc,
     map: map,
     title: "Some name here in the future"
   });
-</script> --}}
+</script>
+

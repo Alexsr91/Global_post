@@ -23,8 +23,12 @@ router.post('/new/product', fileUploader.single('image'), (req, res) => {
     description: req.body.description,
     price: req.body.price,
     category: req.body.category,
-    location: req.body.location,
+    city: req.body.location,
     imageUrl: req.file.path,
+    location: {
+      type: 'Point',
+      coordinates: [req.body.longitude, req.body.latitude]
+    },
   })
     .then(() => {
       res.redirect('/')
@@ -70,7 +74,11 @@ router.post('/:id/update', (req, res) => {
     description: req.body.description,
     price: req.body.price,
     category: req.body.category,
-    location: req.body.location,
+    city: req.body.location,
+    location: {
+      type: 'Point',
+      coordinates: [req.body.longitude, req.body.latitude]
+    },
     }).then(() => {
     res.redirect('/userpage')
   })
@@ -139,13 +147,10 @@ router.post('/send-email', (req, res, next) => {
 
 router.get('/:id/seemore', (req, res, next) => {
   console.log(req.params.id)
-  Product.findById(req.params.id).then((producFromDB) => {
+  Product.findById(req.params.id).populate('user').then((producFromDB) => {
     console.log(producFromDB)
     res.render('product/seemore', { product: producFromDB })
-
-
   })
-
 });
 
 module.exports = router;
