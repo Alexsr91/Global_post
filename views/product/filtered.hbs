@@ -1,4 +1,4 @@
-<Section class="explore_products">
+<header class="header-home">
   <form action="/filter" method="get" class="filter-box">
     <div class="filter">
       <p>Product</p>
@@ -9,12 +9,12 @@
       <p>Price</p>
       <select id="pricing" name="price" placeholder="Choose a category">
 
-        <option value="0">More than 0€</option>
-        <option value="50">More than 50€</option>
-        <option value="100">More than 100€</option>
-        <option value="200">More than 200€</option>
-        <option value="500">More than 500€</option>
-        <option value="1000">More than 1000€</option>
+         <option value="0">More than 0€</option>
+            <option value="50">More than 50€</option>
+            <option value="100">More than 100€</option>
+            <option value="200">More than 200€</option>
+            <option value="500">More than 500€</option>
+            <option value="1000">More than 1000€</option>
 
       </select>
     </div>
@@ -41,9 +41,10 @@
     </div>
     <button type="submit" class="search-buttom"><img src="images/search.svg" alt=""></i></button>
   </form>
+</header>
 
-
-
+<Section class="explore_products">
+  
   <h3>Your results</h3>
 
   <div class="block_products">
@@ -57,8 +58,9 @@
         <p>{{this.smallDescription}}</p>
         <p>{{this.price}}€</p>
         <p>Posted by:<a href="/sellerpage/{{this.user.id}}">{{this.user.username}}</a></p>
-      </div>
-    </div>
+        </div>
+        <p><a href="{{this._id}}/seemore" class="btn-small">see more</a></p>
+        </div>
     {{/each}}
   </div>
 

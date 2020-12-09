@@ -18,7 +18,7 @@ router.post('/signup', (req, res, next) => {
   const pwHash = bcrypt.hashSync(req.body.password, salt);
   // creates an object in the database
   User.create({ username: req.body.username, passwordHash: pwHash }).then(() => {
-      res.redirect('/')
+      res.redirect('user/login')
   });
 });
 

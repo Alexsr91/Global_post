@@ -18,10 +18,10 @@
       <a href="/" class="logo"><img src="/images/Logo.png" alt="GlobalPost"></a>
       
       {{#if user}}
-        <form action="/logout" method="post">
-        <button class="save-button" type="submit">Logout</button>
+        <form action="/logout" method="post" >
+        <button class="btn-logout" type="submit">Logout</button>
         </form>
-      <div><a href="/userpage">{{user.username}}</a></div>
+      <div><a href="/userpage" class="nav_content">{{user.username}}</a></div>
       {{else}}
       <a href="/login" class="nav_content">Login</a>
       <div class="Button-small"><a href="/signup">Get started</a></div>

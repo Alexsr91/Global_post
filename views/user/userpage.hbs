@@ -3,15 +3,16 @@
 </header>
 
 <section class="User_card">
-  <p>Name: {{user.Name}} {{user.SecondName}}</p><br>
-  <p>About:{{user.bio}}</p><br>
-  <p>Email:{{user.Email}}</p>
-  <p>Phone Number:{{user.Phone}}</p><br>
-
+  <p><strong> Name: </strong>{{user.Name}} {{user.SecondName}}</p><br>
+  <p><strong> About: </strong>{{user.bio}}</p><br>
+  <p><strong> Email: </strong>{{user.Email}}</p>
+  <p><strong> Number: </strong>{{user.Phone}}</p><br>
+<div class="btn-card">
   <form action="/{{user.id}}/edit-profile" method="get">
-    <button>EDIT PROFILE</button>
+    <button class="btn-logout">Edit profile</button>
   </form>
-  <button><a href="/new/product">New product</a></button>
+  <div class="Button-small"><a href="/new/product">New product</a></div>
+ </div> 
 </section>
 
 <Section class="explore_products">
@@ -29,7 +30,7 @@
         <p>{{this.smallDescription}}</p>
         <p>{{this.description}}</p>
       </div>
-      <div class="btn_card">
+      <div class="btn-card">
         <form action="/{{this._id}}/delete" method="post">
           <button>DELETE</button>
         </form>

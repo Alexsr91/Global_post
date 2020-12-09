@@ -1,6 +1,9 @@
-<section class="form-container">
+<div class="goback"><a href="/" class="goback">Go back to the list</a></div>
 
- <div class="img-box">
+<section class="form-container-sell">
+
+<section class="see_product">
+ <div>
         <img src="{{product.imageUrl}}" alt="Image">
      
       <div class="text">
@@ -8,15 +11,15 @@
         <p>Price: {{product.price}}</p>
         <p>{{product.smallDescription}}</p>
         <p>{{product.description}}</p>
-
- <input type="hidden" id="myLatitude" type="number" value="{{product.location.coordinates.[1]}}">
+      </div>
+<input type="hidden" id="myLatitude" type="number" value="{{product.location.coordinates.[1]}}">
 <input type="hidden" id="myLongitude" type="number" value="{{product.location.coordinates.[0]}}">
 <div id="map"></div>
-      </div>
  </div>
+</section>
 
-
-<section class="User_card">
+<section class="see_seller">
+  <h3>{{product.user.username}}</h3>
   <p>Name: {{product.user.Name}} {{product.user.SecondName}}</p><br>
   <p>About:{{product.user.bio}}</p><br>
   <p>Email:{{product.user.Email}}</p>
@@ -29,17 +32,13 @@
     
     <input type="hidden" name="email" id="" value="{{product.user.Email}}" >
     <label for="">Subject</label>
-    <input type="text" name="subject" id="">
+    <input type="text" name="subject" id=""><br>
     <label for="">Message</label>
     <textarea type="text" name="message" id=""></textarea>
     <button type="submit">Submit</button>
   </form>
 
 </section>
-
-
-<a href="/">Go back to the list</a>
-
 </section>
 
 <script>
